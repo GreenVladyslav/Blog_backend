@@ -26,6 +26,7 @@ const app = express();
 // когда создается хранилище diskStorage => віполняется функция и сохраняет файлі
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
+    // если нет папки то ме создаем
     if (!fs.existsSync('uploads')) {
       fs.mkdirSync('uploads');
     }
